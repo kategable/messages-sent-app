@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'messages-sent-app';
+  data: string[] = [];
+  onSendData(data){
+    this.data.push( data);
+  }
+  
 }
