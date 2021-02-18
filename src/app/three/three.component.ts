@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-three',
@@ -7,11 +8,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ThreeComponent   {
 
-  @Output() sendData = new EventEmitter<string>();
-
+  constructor(private readonly service: DataService) { }
+   
   clicked(data)
   {
-    this.sendData.emit(data )
+    this.service.addData(data )
   }
 
 }

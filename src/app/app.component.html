@@ -1,6 +1,6 @@
-<app-one (sendData)="onSendData($event)"></app-one>
+<app-one></app-one>
 <ol>
-  <li *ngFor="let d of data">
+  <li *ngFor="let d of data$ | async">
     {{d}}
   </li>
 </ol>

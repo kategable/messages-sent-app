@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-two',
@@ -7,12 +8,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class TwoComponent  {
 
-  @Output() sendData = new EventEmitter<string>();
-   
-
+  constructor(private readonly service: DataService) { }
+  
   clicked(data)
   {
-    this.sendData.emit(data )
+    this.service.addData(data )
   }
 
 }

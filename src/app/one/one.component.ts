@@ -1,19 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from './../data.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-one',
   templateUrl: './one.component.html',
-  styleUrls: ['./one.component.css']
+  styleUrls: ['./one.component.css'],
 })
-export class OneComponent  {
-
-  constructor() { }
-  @Output() sendData = new EventEmitter<string>();
-   
-
-  clicked(data)
-  {
-    this.sendData.emit(data)
+export class OneComponent {
+  constructor(private readonly service: DataService) {}
+  clicked(data) {
+    this.service.addData(data);
   }
-
 }

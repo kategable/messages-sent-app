@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+  constructor(private readonly service: DataService) { }
+
   title = 'messages-sent-app';
-  data: string[] = [];
-  onSendData(data){
-    this.data.push( data);
-  }
+  data$ = this.service.data$
+
   
 }
