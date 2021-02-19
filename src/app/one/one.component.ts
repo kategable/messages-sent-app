@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class OneComponent {
   constructor(private readonly service: DataService) {}
-  clicked(data) {
+  clicked(data): void {
     this.service.addData(data);
   }
 }

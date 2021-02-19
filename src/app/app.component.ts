@@ -5,13 +5,11 @@ import { DataService } from './data.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  constructor(private readonly service: DataService) { }
+  constructor(private readonly service: DataService) {}
 
   title = 'messages-sent-app';
-  data$ = this.service.data$
-
-  
+  data$ = this.service.data$;
 }

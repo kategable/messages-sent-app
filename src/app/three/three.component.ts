@@ -9,10 +9,9 @@ import { DataService } from '../data.service';
 export class ThreeComponent   {
 
   constructor(private readonly service: DataService) { }
-   
-  clicked(data)
+  clicked(data): void
   {
-    this.service.addData(data )
+    this.service.addData(data);
   }
 
 }

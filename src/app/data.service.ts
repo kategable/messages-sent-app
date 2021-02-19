@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   private dataSubject = new BehaviorSubject<string[]>([]);
-  data$= this.dataSubject.asObservable();
+  data$ = this.dataSubject.asObservable();
   constructor() { }
 
-  addData(data){
-    let d = this.dataSubject.value;
+  addData(data): void{
+    const d = this.dataSubject.value;
     d.push(data);
-    this.dataSubject.next(d)
+    this.dataSubject.next(d);
   }
 }
